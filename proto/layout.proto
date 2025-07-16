@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "tools.proto";
+
+package layout;
+
+service Layout {
+    rpc AutoLayout(AutoLayoutRequest) returns (AutoLayoutResponse);
+}
+
+message AutoLayoutRequest {
+    repeated Node nodes = 1;
+    repeated Edge edges = 2;
+}
+
+message AutoLayoutResponse {
+    repeated PositionedNode nodes = 1;
+}
